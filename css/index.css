@@ -2,7 +2,7 @@
 
 main {
   width: 100%;
-  height: calc(100vh - 20vh);
+  height: 100vh;
   margin-top: 20vh;
   background-image: url(../img/BG.jpg);
   background-size: cover;
