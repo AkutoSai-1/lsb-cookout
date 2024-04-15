@@ -1,0 +1,316 @@
+/* Root */
+/*
+These codes are to set my personal default codes and variables.
+The variable are usually place in the root of the CSS.
+*/
+
+:root {
+  --bgc: #000;
+  --lc: #290171;
+  --c1: #4904c9;
+  --c2: #00010e;
+  --w: #fff;
+  font-size: 62.5%;
+  --p: 1.5rem;
+  --h: 3rem;
+}
+
+/* Fonts */
+/* This code is for the font style of the website. */
+
+.anta-regular {
+  font-family: "Anta", Arial;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Anta", Arial;
+  src: url(../fonts/Anta-Regular.ttf);
+}
+
+/* Background */
+/* This is to set a default background to se if there are any gapes or anything out of line in the styling of the webpages. */
+
+body {
+  background-color: var(--bgc);
+}
+
+/* This code is to perload the social media coloured images so it won't flicker when you hover over it for the first time. */
+
+body::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -100;
+  content: url(../img/fbc.png) url(../img/igc.png);
+}
+
+/* Website Wrapper */
+/* This code is a wrapper for the website so that all contents in the website aligns. */
+
+.wrapper {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+/* Text Styling */
+/* This is miscellaneous text styling. */
+
+h1,
+h2,
+h3 {
+  font-size: 3rem;
+  line-height: 3rem;
+  color: var(--w);
+  font-family: "Anta", Arial;
+  font-weight: 600;
+}
+
+p {
+  font-size: var(--p);
+  line-height: 2.5rem;
+  color: var(--w);
+  font-family: "Anta", Arial;
+}
+
+a {
+  font-size: var(--p);
+  line-height: 2.5rem;
+  color: var(--w);
+  font-family: "Anta", Arial;
+  cursor: pointer;
+}
+
+/* Header */
+/* This code is for the header of the website. */
+
+.hm {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  background-color: var(--w);
+  justify-content: space-between;
+  z-index: 100;
+}
+
+/* This code is for the logo of the website. */
+.logo {
+  width: auto;
+  height: 100%;
+  display: flex;
+  z-index: 100;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+  align-self: center;
+}
+
+/* This code is for the navigation inside the header of the website. */
+.nav {
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  z-index: 100;
+  align-items: center;
+  padding-left: calc(1vw + 4rem);
+}
+
+.nav ul {
+  list-style: none;
+  margin-left: 3vw;
+}
+
+.nav ul li {
+  display: inline;
+  float: left;
+  margin-right: 2vw;
+}
+
+.nav ul li a {
+  display: block;
+  font-family: "Anta", Arial;
+  font-size: 2.5rem;
+  line-height: 10vh;
+  color: var(--bgc);
+}
+
+.nav ul li a:hover {
+  color: var(--lc);
+}
+
+/* This code is for the social media icons inside the header of the website. */
+.sm {
+  width: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 1vw;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  z-index: 100;
+}
+
+.fb {
+  width: 7vh;
+  height: 7vh;
+  background-image: url(../img/fbbw.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.ig {
+  width: 7vh;
+  height: 7vh;
+  background-image: url(../img/igbw.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.fb:hover {
+  background-image: url(../img/fbc.png);
+}
+
+.ig:hover {
+  background-image: url(../img/igc.png);
+}
+
+/* Menu */
+/* This code is for the menu for small/mobile screens. */
+
+.menu {
+  display: flex;
+  position: fixed;
+  height: 100lvh;
+  width: 100%;
+  background-color: var(--bgc);
+  top: 100%;
+  margin-top: 5vh;
+  z-index: 90;
+  transition: all 550ms ease;
+}
+
+.menu-items {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../img/BG.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom, center;
+  background-size: cover;
+}
+
+.menu ul {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu li {
+  flex-basis: 100%;
+  height: 100%;
+  border: var(--c1) solid 0.4rem;
+  border-bottom: none;
+}
+
+.menu li:last-child {
+  border-bottom: var(--c1) solid 0.4rem;
+}
+
+.menu a {
+  display: flex;
+  height: 100%;
+  font-size: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Other Resolutions */
+
+/* 
+This is code inside of a media query.
+The only code that has to change inside the media query are the things that are going to change.
+The media query can have a min-width, max width, min-height or max height or all if necessary.
+*/
+
+@media only screen and (min-width: 300px) and (max-width: 1440px) and (orientation: portrait) {
+  .wrapper {
+    width: 80vw;
+  }
+
+  .hm {
+    width: 100%;
+    height: 5vh;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .fb,
+  .ig {
+    width: 4vw;
+    height: 4vw;
+  }
+
+  /* Hamburger Btn Open */
+  /* This is the code for the hamburger menu open button.  */
+
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 4vw;
+    height: 4vw;
+    margin-left: 4vw;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .hamburger-menu .line {
+    width: 100%;
+    height: 20%;
+    background: var(--c2);
+    border-radius: 1rem;
+  }
+
+  /* Hamburger Btn Close */
+  /* This is the code for the hamburger menu close button. */
+
+  .close-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 4vw;
+    height: 4vw;
+    margin-left: 4vw;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+  }
+
+  .close-menu .line {
+    width: 100%;
+    height: 20%;
+    background: var(--c2);
+    border-radius: 1rem;
+    position: absolute;
+  }
+
+  .close-menu .line:first-child {
+    transform: rotate(45deg);
+  }
+
+  .close-menu .line:last-child {
+    transform: rotate(-45deg);
+  }
+}
